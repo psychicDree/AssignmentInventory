@@ -47,8 +47,8 @@ public class RackManager : MonoBehaviour
         PlayerPrefs.SetFloat(SAVED_PROGRESS, progress);
         PlayerPrefs.SetInt(OPEN_CARD_PROGRESS, 0);
         PlayerPrefs.SetInt(RECIEVED_CARD_PROGRESS, 0);
-        foreach (var gift in Gifts)Destroy(gift.gameObject);
-        InitializeGifts();
+        foreach (var gift in GiftContainer.GetComponentsInChildren<BaseGift>()) Destroy(gift.gameObject);
+        StartCoroutine(InitializeGifts());
     }
     private void OnIncrementButtonClick()
     {
