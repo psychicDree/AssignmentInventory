@@ -56,6 +56,7 @@ public class RackManager : MonoBehaviour
         if (progress >= RackFillImage.maxValue * 0.9f)
         {
             RackFillImage.value = RackFillImage.maxValue;
+            PlayerPrefs.SetFloat(SAVED_PROGRESS, progress);
             return;
         }
         RackFillImage.value = progress;
